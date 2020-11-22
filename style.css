@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Comfortaa, cursive;
+}
+
+/* Everything Related to Title */
+.titleDiv {
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+.aquaText {
+    color:aqua;
+}
+
+/* Search Div and input field */
+.searchDiv {
+    font-size: 1vw;
+    margin: auto;
+    margin-top: 3vh;
+    width: 50vw;
+    text-align: center;
+    /* border: 3px solid red; */
+}
+
+.searchInput {
+    height: 2vh;
+    outline: none;
+    border: none;
+    
+}
+
+.searchButton {
+    size: 2vw;
+    outline: none;
+    border: none;
+    width: 30;
+    height: 2.2vh;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* Actual Lyrics Div */
+.lyricsDiv {
+    margin: auto;
+    margin-top: 1vw;
+    width: 40vw;
+    text-align: left;
+    scroll-behavior: smooth;
+    /* border: 3px solid red; */
+}
+
+.songName {
+    font-size: 30px;
+    font-size: 1.5vw;
+}
