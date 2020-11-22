@@ -6,3 +6,4 @@ var songInput = document.querySelector(".searchInput");
 
 getLyrics(songName){
     genius.search(songName)
+}
