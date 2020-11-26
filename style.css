@@ -14,6 +14,22 @@ body {
     color:aqua;
 }
 
+.notice {
+    padding-top: 2vh;
+    text-align: center;
+}
+
+.author {
+    padding-top: 2vh;
+    text-align: center;
+}
+
+a:link {
+    color: aqua;
+}
+a:visited {
+    color: rgb(0, 183, 255);
+}
 /* Search Div and input field */
 .searchDiv {
     font-size: 1vw;
@@ -48,7 +64,6 @@ body {
     margin-top: 1vw;
     width: 40vw;
     text-align: left;
-    scroll-behavior: smooth;
     /* border: 3px solid red; */
 }
 
