@@ -94,7 +94,7 @@ async function requestListener(req, res){
     let song='';
 
     while(lyr==""){
-      response = await main("HUMBLE")
+      response = await main(data)
       .then(resp => resp);
       lyr = response[2];
       artist = response[1];
