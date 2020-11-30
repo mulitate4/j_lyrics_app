@@ -10,7 +10,7 @@ const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
 const host = process.env.HOST;
-const port = process.env.PORT;
+const port = process.env.PORT||8000;
 
 // Initialization
 let genius = new api(accessId);
@@ -22,6 +22,7 @@ async function getUrl(songName){
   let resp = await genius.search(songName).then((resp) => {
   
   // Extract URL from response
+    console.log(resp)
     let songUrl = resp.hits[0].result.path;
     fullSongUrl = baseUrl + songUrl;
     return fullSongUrl;
@@ -77,8 +78,6 @@ async function requestListener(req, res){
   let data = ''
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-  res.setHeader('Access-Control-Allow-Credentials', true);
   res.writeHead(200);
 
   req.on('data', (chunk)=>{
@@ -89,19 +88,21 @@ async function requestListener(req, res){
     console.log(data)
   })
 
-  let lyr="";
-  let artist='';
-  let song='';
+  if (data != ''){
+    let lyr="";
+    let artist='';
+    let song='';
 
-  while(lyr==""){
-    response = await main(data)
-    .then(resp => resp);
-    lyr = response[2];
-    artist = response[1];
-    song = response[0];
-  }
+    while(lyr==""){
+      response = await main("HUMBLE")
+      .then(resp => resp);
+      lyr = response[2];
+      artist = response[1];
+      song = response[0];
+    }
 
-  res.end(song+"\n"+artist+"\n"+lyr);
+    res.end(song+"\n"+artist+"\n"+lyr);}
+    else{res.end("couldn't retrieve song")}
 }
 
 // Create the Actual Server
