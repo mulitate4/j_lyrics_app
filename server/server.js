@@ -3,7 +3,6 @@ const http = require('http');
 const api = require('genius-api');
 const $ = require('cheerio');
 const axios = require('axios');
-const request = require('request');
 
 // Variables
 const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKOKg";

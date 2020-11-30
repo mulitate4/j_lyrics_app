@@ -1,0 +1,31 @@
+{
+  "name": "lyricist_app",
+  "version": "1.0.0",
+  "description": "Lyricist app backend",
+  "main": "server/server.js",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "genius-api": "^0.4.1",
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mulitate4/j_lyrics_app.git"
+  },
+  "keywords": [
+    "Js",
+    "Lyrics"
+  ],
+  "author": "Mulitate4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mulitate4/j_lyrics_app/issues"
+  },
+  "homepage": "https://github.com/mulitate4/j_lyrics_app#readme"
+}
