@@ -25,7 +25,7 @@ addLyrics = function(lyrics){
 async function main(query){
     let lyrFinal = "";
 
-    let lyrics = await fetch("http://localhost:8000", {
+    let lyrics = await fetch("https://lyricist-app-banckend.herokuapp.com/", {
         method: 'POST',
         body: query
     })
