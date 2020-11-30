@@ -9,8 +9,8 @@ const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKO
 const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
-const host = process.env.HOST||"localhost";
-const port = process.env.PORT||"8000";
+const host = process.env.HOST;
+const port = process.env.PORT;
 
 // Initialization
 let genius = new api(accessId);
