@@ -9,8 +9,8 @@ const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKO
 const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
-const host = process.env.HOST;
-const port = process.env.PORT;
+const host = process.env.HOST||"localhost";
+const port = process.env.PORT||"8000";
 
 // Initialization
 let genius = new api(accessId);
@@ -25,7 +25,7 @@ async function getUrl(songName){
     let songUrl = resp.hits[0].result.path;
     fullSongUrl = baseUrl + songUrl;
     return fullSongUrl;
-  })
+  }).catch((e)=>{console.log(e)})
   return resp;
 
 }
@@ -75,6 +75,10 @@ async function main(songName){
 // Server Function
 async function requestListener(req, res){
   let data = ''
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   res.writeHead(200);
 
   req.on('data', (chunk)=>{
@@ -82,6 +86,7 @@ async function requestListener(req, res){
   })
 
   await req.on('end', ()=>{
+    console.log(data)
   })
 
   let lyr="";
