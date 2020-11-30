@@ -9,8 +9,8 @@ const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKO
 const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
-const host = process.env.host;
-const port = process.env.port;
+const host = process.env.HOST;
+const port = process.env.PORT;
 
 // Initialization
 let genius = new api(accessId);
@@ -102,6 +102,6 @@ async function requestListener(req, res){
 // Create the Actual Server
 const server = http.createServer(requestListener);
 
-server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
+server.listen(port, () => {
+    console.log(`Server is running on ${process.env.HOST}:${port}`);
 });
