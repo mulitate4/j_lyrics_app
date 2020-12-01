@@ -6,7 +6,7 @@ body {
 
 /* Everything Related to Title */
 .titleDiv {
-    font-size: 1.4vw;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -32,10 +32,10 @@ a:visited {
 }
 /* Search Div and input field */
 .searchDiv {
-    font-size: 1vw;
+    font-size: 1rem;
     margin: auto;
     margin-top: 3vh;
-    width: 50vw;
+    width: 60vw;
     text-align: center;
     /* border: 3px solid red; */
 }
@@ -62,12 +62,12 @@ a:visited {
 .lyricsDiv {
     margin: auto;
     margin-top: 1vw;
-    width: 40vw;
+    width: 50rem;
     text-align: left;
     /* border: 3px solid red; */
 }
 
 .songName {
     font-size: 30px;
-    font-size: 1.5vw;
+    /* font-size: 1.5vw; */
 }
