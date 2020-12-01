@@ -6,13 +6,11 @@ addSongName = function(songName){
     var songNameh3Exists = document.querySelector('.songName') || false
     if (songNameh3Exists != false){
         songNameh3Exists.innerHTML = songName;
-        console.log("songName not created")
     }else{
         let songNameH3 = document.createElement('h3');
         songNameH3.classList.add('songName');
         songNameH3.innerHTML = songName;
         lyricsDiv.appendChild(songNameH3);
-        console.log("songName created")
     }
 }
 

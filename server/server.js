@@ -19,8 +19,8 @@ let genius = new api(accessId);
 async function getUrl(songName){
   let fullSongUrl;
 
-  let resp = await genius.search(songName).then((resp) => {
-  
+  let resp = await genius.search(songName)
+  .then((resp) => {  
   // Extract URL from response
     console.log(resp)
     let songUrl = resp.hits[0].result.path;
@@ -78,6 +78,8 @@ async function requestListener(req, res){
   let data = ''
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   res.writeHead(200);
 
   req.on('data', (chunk)=>{
@@ -101,8 +103,10 @@ async function requestListener(req, res){
       song = response[0];
     }
 
-    res.end(song+"\n"+artist+"\n"+lyr);}
-    else{res.end("couldn't retrieve song")}
+    res.end(song+"\n"+artist+"\n"+lyr);
+  }else{
+    res.end("couldn't retrieve song")
+  }
 }
 
 // Create the Actual Server
