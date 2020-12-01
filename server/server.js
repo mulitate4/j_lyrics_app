@@ -3,13 +3,14 @@ const http = require('http');
 const api = require('genius-api');
 const $ = require('cheerio');
 const axios = require('axios');
+const url = require('url')
 
 // Variables
 const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKOKg";
 const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
-const host = process.env.HOST;
+const host = process.env.HOST||'lyricist-app-banckend.herokuapp.com';
 const port = process.env.PORT||8000;
 
 // Initialization
@@ -22,7 +23,6 @@ async function getUrl(songName){
   let resp = await genius.search(songName)
   .then((resp) => {  
   // Extract URL from response
-    console.log(resp)
     let songUrl = resp.hits[0].result.path;
     fullSongUrl = baseUrl + songUrl;
     return fullSongUrl;
@@ -82,13 +82,7 @@ async function requestListener(req, res){
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.writeHead(200);
 
-  req.on('data', (chunk)=>{
-    data += chunk;
-  })
-
-  await req.on('end', ()=>{
-    console.log(data)
-  })
+  data = url.parse(req.url, true).query['q']||"";
 
   if (data != ''){
     let lyr="";
@@ -113,5 +107,5 @@ async function requestListener(req, res){
 const server = http.createServer(requestListener);
 
 server.listen(port, () => {
-    console.log(`Server is running on ${process.env.HOST}:${port}`);
+    console.log(`Server is running on ${host}:${port}`);
 });
