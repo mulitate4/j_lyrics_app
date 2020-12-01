@@ -22,10 +22,10 @@ addLyrics = function(lyrics){
 
 async function main(query){
     let lyrFinal = "";
+    fetchURL = 'https://lyricist-app-banckend.herokuapp.com/?q='+query;
 
-    let lyrics = await fetch("http://127.0.0.1:8000/q=playdate", {
-        method: 'POST',
-        body: query
+    let lyrics = await fetch(fetchURL, {
+        method: 'GET'
     })
     .then(e => e.text());
 
