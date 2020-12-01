@@ -56,3 +56,9 @@ function check(){
 searchButton.addEventListener('click', () => {
     check()
 });
+
+window.addEventListener('keydown', (e)=>{
+    if (e.key == "Enter"){
+        check();
+    }
+});
