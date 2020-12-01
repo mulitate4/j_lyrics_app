@@ -10,7 +10,7 @@ const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKO
 const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
-const host = process.env.HOST||'lyricist-app-banckend.herokuapp.com';
+const host = process.env.HOST||'https://lyricist-app-banckend.herokuapp.com';
 const port = process.env.PORT||8000;
 
 // Initialization

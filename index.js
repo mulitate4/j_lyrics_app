@@ -23,6 +23,7 @@ addLyrics = function(lyrics){
 async function main(query){
     let lyrFinal = "";
     fetchURL = 'https://lyricist-app-banckend.herokuapp.com/?q='+query;
+    // fetchURL = 'http://127.0.0.1:8000/?q='+query;
 
     let lyrics = await fetch(fetchURL, {
         method: 'GET'
