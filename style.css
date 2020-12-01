@@ -62,12 +62,16 @@ a:visited {
 .lyricsDiv {
     margin: auto;
     margin-top: 1vw;
-    width: 50rem;
+    width: 70vw;
     text-align: left;
     /* border: 3px solid red; */
 }
 
 .songName {
     font-size: 30px;
-    /* font-size: 1.5vw; */
+    /* font-size: 1.7vw; */
 }
+
+/* p {
+    font-size: 1vw;
+} */
