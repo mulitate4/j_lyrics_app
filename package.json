@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "cheerio": "^1.0.0-rc.3",
+    "electron": "^11.1.0",
     "genius-api": "^0.4.1",
     "http": "^0.0.1-security"
   },

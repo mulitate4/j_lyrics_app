@@ -6,7 +6,7 @@ const axios = require('axios');
 const url = require('url')
 
 // Variables
-const accessId = "0SFWrwArYYwBhc5zLllNT3BPJT74vnPnp4Qexk1LQBVmoVtC2w5dtmukUNcQKOKg";
+const accessId = "";
 const apiUrl = "https://api.genius.com/";
 const baseUrl = "https://www.genius.com"
 
