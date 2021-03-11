@@ -1,4 +1,4 @@
-# j_lyrics_app
+# Lyricist
 - Backend - NodeJS
 - Frontend - Vanilla JS
 
